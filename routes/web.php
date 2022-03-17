@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return Inertia::render('Home',[
+        'name' => 'RsRuman'
+    ]);
+});
+
+Route::get('/users', function () {
+    sleep(2);
+    return Inertia::render('User');
+});
+
+Route::get('/setting', function () {
+    return Inertia::render('Setting');
+});
+
+Route::post('/logout', function () {
+    return '<h1 style="text-align: center">logout</h1>';
 });

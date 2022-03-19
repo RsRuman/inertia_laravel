@@ -1,21 +1,28 @@
 <template>
-    <section class="mt-6">
-        <ul class="list-disc">
-            <li><Link href="/" class="text-blue-500 hover:underline">Home</Link></li>
-            <li><Link href="/users" class="text-blue-500 hover:underline">Users</Link></li>
-            <li><Link href="/setting" class="text-blue-500 hover:underline">Setting</Link></li>
+    <section>
+        <ul class="flex list-disc space-x-4 list-inside">
+            <li>
+                <NavLink href="/" :active="$page.component === 'Home'">Home</NavLink>
+            </li>
+            <li>
+                <NavLink href="/users" :active="$page.component === 'User'">Users</NavLink>
+            </li>
+            <li>
+                <NavLink href="/setting" :active="$page.component === 'Setting'">Setting</NavLink>
+            </li>
+
             <li><Link href="/logout" method="post" as="button" class="text-blue-500 hover:underline">Logout</Link></li>
         </ul>
     </section>
 </template>
 
 <script>
-import { Link } from "@inertiajs/inertia-vue3";
+import NavLink from "./NavLink";
 
 export default {
     name: "Nav",
     components: {
-        Link
+        NavLink
     }
 }
 </script>

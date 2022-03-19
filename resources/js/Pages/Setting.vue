@@ -1,15 +1,12 @@
 <template>
-<h1 class="text-4xl font-bold">Setting</h1>
-    <Nav></Nav>
+    <h1 class="text-4xl font-bold">Setting</h1>
 </template>
 
 <script>
-import Nav from "../Nav/Nav";
+// import Layout from "../Layout/Layout";
 export default {
     name: "Setting",
-    components: {
-        Nav
-    }
+    // layout: Layout //Persistence layout. (Automatically layout will bind as parent component of the page)
 }
 </script>
 
